@@ -27,6 +27,10 @@ if ($_POST['mediaType'] == 'img')
   catch (mysqli_sql_exception $e)
   {
     throw $e;
+  }
+  finally
+  {
+    $mysqli->close();
   }  
 }
 else if ($_POST['mediaType'] == 'meme')
@@ -39,6 +43,10 @@ else if ($_POST['mediaType'] == 'meme')
   catch (mysqli_sql_exception $e)
   {
     throw $e;
+  }
+  finally
+  {
+    $mysqli->close();
   }  
 }
 else if ($_POST['mediaType'] == 'vid')
@@ -51,6 +59,10 @@ else if ($_POST['mediaType'] == 'vid')
   catch (mysqli_sql_exception $e)
   {
     throw $e;
+  }
+  finally
+  {
+    $mysqli->close();
   }
 }
   
