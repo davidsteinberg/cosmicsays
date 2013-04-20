@@ -1,0 +1,46 @@
+<div style="display:inline-block;"> 
+  <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+  <label for="radioImg" onclick="enableElement();">Image</label>
+  <input id="radioImg" type="radio" value="img" name="mediaType" />
+  <label for="radioMeme" onclick="enableElement();">Meme</label>
+  <input id="radioMeme" type="radio" value="meme" name="mediaType" />
+  <label for="radioVid" onclick="disableElement();">Video</label>
+  <input id="radioVid" type="radio" value="vid" name="mediaType" />
+</div>
+  <br>
+  <br>
+<div id="imageForm">
+<h1>Submit Image</h1>
+<form method="post" action="uploadAction.php">
+  Image Title: <input type="text" name="title" required />
+  <br>
+  File: <input id="imageFile" name="upload" type="file" />
+  <br>
+  <br>
+  <input type="submit" value="Submit" />
+</form>
+</div>
+
+<div id="memeForm">
+<h1>Submit Meme</h1>
+<form method="post" action="uploadAction.php">
+  Meme Title: <input type="text" name="title" required />
+  <br>
+  File: <input id="memeFile" name="upload" type="file" />
+  <br>
+  <br>
+  <input type="submit" value="Submit" />
+</form>
+</div>
+
+<div id="vidForm">
+<h1>Submit Video Link</h1>
+<form method="post" action="uploadAction.php">
+  Video Title: <input type="text" name="title" required />
+  <br>
+  Video URL: <input id="vidUrl" name="vidUrl" type="text" />
+  <br>
+  <br>
+  <input type="submit" value="Submit" />
+</form>
+</div>
