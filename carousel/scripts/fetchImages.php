@@ -1,9 +1,11 @@
 <?php
 $sqldb = "mysql";
-$dbhost = "databaseHostName";
-$dbname = "databaseName";
-//$dbuser = "userName"; $dbpass = "password";
+$dbhost = "localhost";
+$dbname = "cosmicsays";
+$dbuser = "root";
+$dbpass = "";
 
+/*
 // parameters
 if($_POST['medium']){
 	$pMedium = $_POST['medium'];
@@ -12,7 +14,7 @@ if($_POST['medium']){
 } else {
 	$pMedium = "meme";
 }
-
+*/
 
 // Connect to MySQL Server
 try {
