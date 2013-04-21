@@ -34,3 +34,15 @@ body{
 	font-family:helvetica;
 	text-align: center;
 }
+#longbar{
+padding-top: 5px;
+-moz-box-shadow: 3px 4px 8px #000;
+-webkit-box-shadow: 3px 4px 8px #000;
+box-shadow: 3px 4px 8px #000;
+}
+
+#Arrow{
+-moz-box-shadow: 3px 4px 8px #000;
+-webkit-box-shadow: 3px 4px 8px #000;
+box-shadow: 3px 4px 8px #000;
+}

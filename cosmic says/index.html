@@ -1,12 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 	    <link rel="stylesheet" type="text/css" href="index.css">
 	</head>
+
+<script>
+$(document).ready(function(){
+	
+		// moves side bar left to right
+	$("#Arrow").click(function() {
+		
+		if($("#Arrow").css("margin-left") === "126px"){ //css element is checked
+			
+		$("#Arrow").animate({
+			
+			marginLeft: "0px"
+		});
+		$("#longbar").animate({
+			
+			marginLeft: "-126px"
+		});
+		
+		$("#twist").css("-webkit-transform","rotate(360deg)"); //rotate the arrow
+		$("#twist").css("-moz-transform","rotate(360deg)");
+		$("#twist").css("-o-transform","rotate(360deg)");
+		$("#twist").css("-ms-transform","rotate(360deg)");
+		
+		}
+		
+		else{
+		$("#Arrow").animate({
+			
+			marginLeft: "126px"
+		});
+		$("#longbar").animate({
+			
+			marginLeft: "0px"
+		});
+		
+		$("#twist").css("-webkit-transform","rotate(180deg)");
+		$("#twist").css("-moz-transform","rotate(180deg)");
+		$("#twist").css("-o-transform","rotate(180deg)");
+		$("#twist").css("-ms-transform","rotate(180deg)");
+		}
+		
+	});
+});
+
+</script>
+
+
+
 	<body>
+
+
+		<div id="fb-root"></div>
+
+
+<!--Facebook login JavaScript SDK-->
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=100441256826572";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
 <!--navbar-->
 		<div class="navbar container">
 		  <div class="navbar-inner">
@@ -16,26 +82,78 @@
 		      <li><a href="#">Meme</a></li>
 		      <li><a href="#">Images</a></li>
 		      <li><a href="#">Video</a></li>
-		      <li><a href="#">log in</a></li>
+		      <li class="fb-login-button" data-show-faces="true" data-width="250" data-max-rows="2"></li>
+
 		    </ul>
 		  </div>
 		</div>
+		<!--sidenav bar for sorting by stuff-->
+
+		<div id="longbar" style="z-index: 1; position: fixed; margin-top: 100px; margin-left: -126px; width: 125px; height: 106px">
+			<div style="margin-left: 3px; margin-top: 4px; color: #ffffff" font size="30">
+
+		<div class="btn btn-block"><a href="#">Most Veiwed</a></div>
+		<div class="btn btn-block"><a href="#">Most Recent</a></div>
+		<div align="center" class="btn-block btn-group ">
+			<a class="btn dropdown-toggle" data-toggle="dropdown" >
+				Most Recent  
+					<span class="caret"></span> 
+			</a>
+			
+			<ul class="dropdown-menu">
+					<li class="dropdown-submenu">
+						<a tabindex="-1" href="#">Planets</a>
+							<ul class="dropdown-menu">
+								<li><a tabindex="-1" href="#">Mercury</a></li>
+								<li><a tabindex="-1" href="#">Venus</a></li>
+								<li><a tabindex="-1" href="#">Earth</a></li>
+								<li><a tabindex="-1" href="#">Mars</a></li>
+								<li><a tabindex="-1" href="#">Jupiter</a></li>
+								<li><a tabindex="-1" href="#">Saturn</a></li>
+								<li><a tabindex="-1" href="#">Uranus</a></li>
+								<li><a tabindex="-1" href="#">Neptune</a></li>
+							</ul>
+					<li class="dropdown-submenu">
+						<a tabindex="-1" href="#">Moons</a>
+							<ul class="dropdown-menu">
+								<li><a tabindex="-1" href="#">Action</a></li>
+								<li><a tabindex="-1" href="#">Another action</a></li>
+								<li><a tabindex="-1" href="#">Something else here</a></li>
+							</ul>
+					<li class="dropdown-submenu">
+						<a tabindex="-1" href="#">Asteroids</a>
+							<ul class="dropdown-menu">
+								<li><a tabindex="-1" href="#">Action</a></li>
+								<li><a tabindex="-1" href="#">Another action</a></li>
+								<li><a tabindex="-1" href="#">Something else here</a></li>
+							</ul>
+			</ul>
+		</div>	
+	</div>
+</div>
+
+<div id="Arrow" style="z-index: 1; position: fixed; margin-top: 100px; margin-left: 0px; border: 1px solid black; width: 40px; height: 40px">
+	<img id="twist" style="width: 40px; height: 40px" src="arrows.jpg"/>
+</div>
 
 		<div class="container-fluid">
   		<div class="row-fluid">
    			<div class="span9">
       			<div class="memebox">
-					<p class="title"> Memes </p>
+					<h3 class="title"> Memes </h3>
 					<img class="memeimg"  src="http://funny-pictures-blog.com/wp-content/uploads/2011/08/Bitches-Love-Space.jpg">
+					<div class="fb-comments" data-href="http://cosmicsays.com" data-width="470" data-num-posts="10" data-colorscheme="light"></div>
 				</div>
    		 	</div>
    		 	<div class="span3">
 		        <div class="imgbox">
-		        	<p class="title"> Images </p>
+		        	<h5 class="title"> Images </h5>
 					<img class="boximage" src="supernova_3.png">
+
 				</div>
+				
 				<div class="imgbox">
-					<p class="title"> Videos </p>
+					<h5 class="title"> Videos </h5>
 					<iframe width="70%" height="30%" src="http://www.youtube.com/embed/EPyl1LgNtoQ" frameborder="0" allowfullscreen></iframe>
 				</div>
 				<div class="imgbox">
