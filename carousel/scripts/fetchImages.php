@@ -26,7 +26,7 @@ try {
 	// query
 	$sql = "SELECT Title, NumberOfViews, FileLocation, FileName, info
 			FROM image
-			ORDERBY NumberOfViews DESC";
+			ORDER BY NumberOfViews DESC";
 
 	// statement handle
 $sth = $dbh->prepare($sql, Array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
@@ -40,18 +40,18 @@ $sth = $dbh->prepare($sql, Array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 	$rowCount = count($data);
 	echo '[' . PHP_EOL;
 	for ($i = 0; $i < $rowCount - 1; $i++){
-		echo '{"Title":"' . $data[$i]['Title'] . '", ';
-		echo '{"NumberOfViews":"' . $data[$i]['NumberOfViews'] . '", ';
-		echo '{"FileLocation":"' . $data[$i]['FileLocation'] . '", ';
-		echo '{"FileName":"' . $data[$i]['FileName'] . '", ';
-		echo '"info":"' . $data[$i]['info'] . '"},' . PHP_EOL;
+		echo '{{"Title":"' . $data[$i]['Title'] . '"}, ';
+		echo '{"NumberOfViews":"' . $data[$i]['NumberOfViews'] . '"}, ';
+		echo '{"FileLocation":"' . $data[$i]['FileLocation'] . '"}, ';
+		echo '{"FileName":"' . $data[$i]['FileName'] . '"}, ';
+		echo '"info":"' . $data[$i]['info'] . '"}},';
 	}
 	if ($rowCount > 1){
-	echo '{"Title":"' . $data[$rowCount - 1]['Title'] . '", ';
-	echo '{"NumberOfViews":"' . $data[$rowCount - 1]['NumberOfViews'] . '", ';
-	echo '{"FileLocation":"' . $data[$rowCount - 1]['FileLocation'] . '", ';
-	echo '{"FileName":"' . $data[$rowCount - 1]['FileName'] . '", ';
-	echo '"info":"' . $data[$rowCount - 1]['info'] . '"},' . PHP_EOL;
+	echo '{{"Title":"' . $data[$rowCount - 1]['Title'] . '"}, ';
+	echo '{"NumberOfViews":"' . $data[$rowCount - 1]['NumberOfViews'] . '"}, ';
+	echo '{"FileLocation":"' . $data[$rowCount - 1]['FileLocation'] . '"}, ';
+	echo '{"FileName":"' . $data[$rowCount - 1]['FileName'] . '"}, ';
+	echo '"info":"' . $data[$rowCount - 1]['info'] . '"}}' . PHP_EOL;
 	echo ']' . PHP_EOL;
 	} else {
 		echo ']' . PHP_EOL;
