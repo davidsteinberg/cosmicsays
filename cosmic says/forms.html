@@ -94,7 +94,7 @@ $(document).ready(function(){
   <br>
 <div id="imageForm" class="imageform" style="display:none">
 	<h1>Submit Image</h1>
-	<form method="post" action="uploadAction.php">
+	<form method="post" action="uploadAction.php" enctype="multipart/form-data">
 		<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 		<input type="hidden" name="mediaType" value="img" />
 		<label> Input Image Name </label>
@@ -113,7 +113,7 @@ $(document).ready(function(){
 
 <div id="memeForm" class="memeform" style="display:none">
 	<h1>Submit Meme</h1>
-	<form method="post" action="uploadAction.php">
+	<form method="post" action="uploadAction.php" enctype="multipart/form-data">
 		<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 		<input type="hidden" name="mediaType" value="meme" />
 		<label> Input Meme Title </label>
@@ -122,7 +122,7 @@ $(document).ready(function(){
 		<label> Input Meme Category </label>
 		<input type="text" name="info" placeholder="SPACE FACTS!" />
 		<br>
-		<input id="imageFile" name="upload" type="file"/>
+		<input id="memeFile" name="upload" type="file"/>
 		<br>
 		<button type="submit" class="btn-info">Submit</button>
 		<br>

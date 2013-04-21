@@ -7,12 +7,17 @@
 
   
 $title = $_POST['title'];
-$info = $_POST['info']
+$info = $_POST['info'];
+
 
 if ($_FILES['upload'])
 {
-  $uploadDir = "";
-  $uploadFilename = $uploadDir . basename($_FILES['userfile']['name']);
+  if ($_POST['mediaType'] == 'img')
+    $uploadDir = "/assets/images/";
+  else if ($_POST['mediaType'] == 'img')
+    $uploadDir = "/assets/memes/";
+
+  $uploadFile = $uploadDir . basename($_FILES['upload']['name']);
   if (!($_FILES['upload']['error']))
     move_uploaded_file($_FILES['upload']['tmp_name'], $uploadFile);
 }
@@ -22,7 +27,7 @@ if ($_POST['mediaType'] == 'img')
   try
   {
     $mysqli = new mysqli("localhost", "root", "", "cosmicsays");
-    $mysqli->query("CALL PROCEDURE('$title', '$uploadFilename', )");
+    $mysqli->query("CALL PROCEDURE('$title', '$uploadFile', )");
   }
   catch (mysqli_sql_exception $e)
   {
