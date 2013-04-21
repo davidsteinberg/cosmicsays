@@ -43,18 +43,13 @@ $(document).ready(function(){
 	
 });
 
-
-
 </script>
 
 	
 	
 	
-	<body>
-
-		<div class="fb" id="fb-root"></div>
-
-
+<body>
+<div class="fb" id="fb-root"></div>
 <!--Facebook login JavaScript SDK-->
 <script>
 (function(d, s, id) {
@@ -72,9 +67,9 @@ $(document).ready(function(){
 		    <a class="brand" href="#">#CosmicSays</a>
 		    <ul class="nav">
 		      <li class="active"><a href="#">Home</a></li>
-		      <li><a href="meme.html">Meme</a></li>
-		      <li><a href="images.html">Images</a></li>
-		      <li><a href="video.html">Video</a></li>
+		      <li><a href="#">Meme</a></li>
+		      <li><a href="#">Images</a></li>
+		      <li><a href="#">Video</a></li>
 		      <li class="fb-login-button" data-show-faces="true" data-width="250" data-max-rows="2"></li>
 
 		    </ul>
@@ -83,10 +78,8 @@ $(document).ready(function(){
 		
 <!--form-->
 
-
-  <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-  <div class="pagecontainer">
-
+<div class="pagecontainer">
+<div class="banner"></div>
 
 	<div class="btn-group">
 		<button id="radioImg" class="btn-large" onclick="enableElement();" >Image</button>
@@ -101,54 +94,59 @@ $(document).ready(function(){
   <br>
 <div id="imageForm" class="imageform" style="display:none">
 	<h1>Submit Image</h1>
-		<form method="post" action="uploadAction.php">
-			<label> Input Image Name </label>
-				<input type="text" name="title" placeholder="Image name required..." />
-					<br>
-						<label> Input Image Category </label>
-						<input type="text" name="title" placeholder="Example, example, example..." />
-							<br>
-				<input id="imageFile" name="upload"  type="file"/>
-					<br>
-					<br>
-				<button type="submit" class="btn-info">Submit</button>
-		</form>
+	<form method="post" action="uploadAction.php">
+		<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+		<input type="hidden" name="mediaType" value="img" />
+		<label> Input Image Name </label>
+		<input type="text" name="title" placeholder="Image name required..." />
+		<br>
+		<label> Input Image Category </label>
+		<input type="text" name="info" placeholder="SPACE FACTS!" />
+		<br>
+		<input id="imageFile" name="upload"  type="file"/>
+		<br>
+		<br>
+		<button type="submit" class="btn-info">Submit</button>
+	</form>
 </div>
 
 
 <div id="memeForm" class="memeform" style="display:none">
 	<h1>Submit Meme</h1>
-		<form method="post" action="uploadAction.php">
-			<label> Input Meme Title </label>
-				<input type="text" name="title" placeholder="Meme name required..." />
-					<br>
-						<label> Input Meme Category </label>
-						<input type="text" name="title" placeholder="Example, example, example..." />
-							<br>
-				<input id="imageFile" name="upload" type="file"/>
-					<br>
-				<button type="submit" class="btn-info">Submit</button>
-				<br>
-				<br>
-				<button class="btn-large btn-success " href="#" >Create Your Own Meme</button>
-		</form>
+	<form method="post" action="uploadAction.php">
+		<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+		<input type="hidden" name="mediaType" value="meme" />
+		<label> Input Meme Title </label>
+		<input type="text" name="title" placeholder="Meme name required..." />
+		<br>
+		<label> Input Meme Category </label>
+		<input type="text" name="info" placeholder="SPACE FACTS!" />
+		<br>
+		<input id="imageFile" name="upload" type="file"/>
+		<br>
+		<button type="submit" class="btn-info">Submit</button>
+		<br>
+		<br>
+		<button class="btn-large btn-success " href="#" >Create Your Own Meme</button>
+	</form>
 </div>
 
 <div id="vidForm" class="vidform" style="display:none">
 	<h1>Submit Video URL</h1>
-		<form method="post" action="uploadAction.php">
-			<label> Input Video Title </label>
-				<input type="text" name="title" placeholder="Video name required..." />
-					<br>
-					<label> Input Video Category </label>
-						<input type="text" name="title" placeholder="Example, example, example..." />
-							<br>
-								<label> Input Video URL </label>
-							<input type="text" name="title" placeholder="Past URL here..."/>
-						<br>
-					<br>
-				<button type="submit" class="btn-info">Submit</button>
-		</form>
+	<form method="post" action="uploadAction.php">
+		<input type="hidden" name="mediaType" value="vid" />
+		<label> Input Video Title </label>
+		<input type="text" name="title" placeholder="Video name required..." />
+		<br>
+		<label> Input Video Category </label>
+		<input type="text" name="info" placeholder="SPACE FACTS!" />
+		<br>
+		<label> Input Video URL </label>
+		<input type="text" name="title" placeholder="Past URL here..."/>
+		<br>
+		<br>
+		<button type="submit" class="btn-info">Submit</button>
+	</form>
 </div>
 
 </div>
