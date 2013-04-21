@@ -1,0 +1,50 @@
+
+
+.banner{
+
+height: 50px;
+}
+
+.btn-group{
+
+margin-left:23%;
+top: 50px;
+opacity: 1;
+z-index: 2;
+
+
+}
+.pagecontainer{
+position: absolute;
+z-index: 0;
+margin-left: 35%;
+width: 500px;
+height: 500px;
+background-color: #9999FF;
+opacity: .7;
+
+}
+
+/* formatting the forms */
+#vidForm{
+text-align: center;
+z-index: 2;
+position: relative;
+top: 60px;
+opacity: 1;
+}
+#memeForm{
+text-align: center;
+z-index: 2;
+position: relative;
+top: 60px;
+opacity: 1;
+}
+#imageForm{
+text-align: center;
+z-index: 2;
+position: relative;
+top: 60px;
+opacity: 1;
+}
+

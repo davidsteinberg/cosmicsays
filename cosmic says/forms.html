@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="stylesheet" type="text/css" href="css/formpage.css">
+	</head>
+
+<script>
+
+
+$(document).ready(function(){
+
+
+	//each function shows one element and hides the others
+	$('#radioImg').click(function(){ 
+
+		$('#imageForm').show();
+		$('#memeForm').hide();
+		$('#vidForm').hide();
+	});
+	
+	$('#radioMeme').click(function(){
+
+		$('#memeForm').show();
+		$('#vidForm').hide();
+		$('#imageForm').hide();
+   
+	});
+	
+	$('#radioVid').click(function(){
+
+		$('#vidForm').show();
+		$('#memeForm').hide();
+		$('#imageForm').hide();
+   
+	});
+	
+	
+});
+
+
+
+</script>
+
+	
+	
+	
+	<body>
+
+
+		<div class="fb" id="fb-root"></div>
+
+
+<!--Facebook login JavaScript SDK-->
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=100441256826572";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!--navbar-->
+		<div class="navbar container" >
+		  <div class="navbar-inner">
+		    <a class="brand" href="#">#CosmicSays</a>
+		    <ul class="nav">
+		      <li class="active"><a href="#">Home</a></li>
+		      <li><a href="#">Meme</a></li>
+		      <li><a href="#">Images</a></li>
+		      <li><a href="#">Video</a></li>
+		      <li class="fb-login-button" data-show-faces="true" data-width="250" data-max-rows="2"></li>
+
+		    </ul>
+		  </div>
+		</div>
+		
+<!--form-->
+
+
+  <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+  <div class="pagecontainer">
+<div class="banner"></div>
+
+	<div class="btn-group">
+		<button id="radioImg" class="btn-large" onclick="enableElement();" >Image</button>
+		<button id="radioMeme" class="btn-large" onclick="enableElement();" >Meme</button>
+		<button id="radioVid" class="btn-large" onclick="disableElement();">Video</button>
+	</div>
+
+	
+	
+	
+  <br>
+  <br>
+<div id="imageForm" class="imageform" style="display:none">
+	<h1>Submit Image</h1>
+		<form method="post" action="uploadAction.php">
+			<label> Input Image Name </label>
+				<input type="text" name="title" placeholder="Image name required..." />
+					<br>
+						<label> Input Image Category </label>
+						<input type="text" name="title" placeholder="Example, example, example..." />
+							<br>
+				<input id="imageFile" name="upload"  type="file"/>
+					<br>
+					<br>
+				<button type="submit" class="btn-info">Submit</button>
+		</form>
+</div>
+
+
+<div id="memeForm" class="memeform" style="display:none">
+	<h1>Submit Meme</h1>
+		<form method="post" action="uploadAction.php">
+			<label> Input Meme Title </label>
+				<input type="text" name="title" placeholder="Meme name required..." />
+					<br>
+						<label> Input Meme Category </label>
+						<input type="text" name="title" placeholder="Example, example, example..." />
+							<br>
+				<input id="imageFile" name="upload" type="file"/>
+					<br>
+				<button type="submit" class="btn-info">Submit</button>
+				<br>
+				<br>
+				<button class="btn-large btn-success " href="#" >Create Your Own Meme</button>
+		</form>
+</div>
+
+<div id="vidForm" class="vidform" style="display:none">
+	<h1>Submit Video URL</h1>
+		<form method="post" action="uploadAction.php">
+			<label> Input Video Title </label>
+				<input type="text" name="title" placeholder="Video name required..." />
+					<br>
+					<label> Input Video Category </label>
+						<input type="text" name="title" placeholder="Example, example, example..." />
+							<br>
+								<label> Input Video URL </label>
+							<input type="text" name="title" placeholder="Past URL here..."/>
+						<br>
+					<br>
+				<button type="submit" class="btn-info">Submit</button>
+		</form>
+</div>
+
+</div>
+
+	</body>
+	
+	<!--footer-->
+	
+</html>
