@@ -28,7 +28,7 @@ if ($_POST['mediaType'] == 'img')
   try
   {
     $mysqli = new mysqli("localhost", "root", "", "cosmicsays");
-    if (!($mysqli->query("INSERT INTO images(FileName, Title, NumberOfViews, FileLocation, info) ".
+    if (!($mysqli->query("INSERT INTO image(FileName, Title, NumberOfViews, FileLocation, info) ".
 	               "VALUES('$uploadFilename', '$title', 0, '$fileURI', '$info')")))
 	  echo "Failure: " . $mysqli->error;
   }
@@ -42,7 +42,7 @@ else if ($_POST['mediaType'] == 'meme')
   try
   {
     $mysqli = connectDB();
-    if (!($mysqli->query("INSERT INTO images(FileName, Title, NumberOfViews, FileLocation, info) ".
+    if (!($mysqli->query("INSERT INTO meme(FileName, Title, NumberOfViews, FileLocation, info) ".
 	               "VALUES('$uploadFilename', '$title', 0, '$fileURI', '$info')")))
 	  echo "Failure: " . $mysqli->error;
   }
@@ -57,7 +57,7 @@ else if ($_POST['mediaType'] == 'vid')
   try
   {
     $mysqli = connectDB();
-    if (!($mysqli->query("INSERT INTO images(Link, Title, NumberOfViews, info) ".
+    if (!($mysqli->query("INSERT INTO video(Link, Title, NumberOfViews, info) ".
 	               "VALUES('$url', '$title', 0, '$info')")));
       echo "Failure: " . $mysqli->error;
   }
