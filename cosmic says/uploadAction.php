@@ -49,7 +49,7 @@ else if ($_POST['mediaType'] == 'meme')
 {
   try
   {
-    $mysqli = connectDB();
+    $mysqli = new mysqli("localhost", "root", "", "cosmicsays");
     if (!($mysqli->query("INSERT INTO meme(FileName, Title, NumberOfViews, FileLocation, info) ".
 	               "VALUES('$uploadFilename', '$title', 0, '$fileURI', '$info')")))
 	  echo "Failure: " . $mysqli->error;
@@ -64,7 +64,7 @@ else if ($_POST['mediaType'] == 'vid')
   $url = $_POST['url'];
   try
   {
-    $mysqli = connectDB();
+    $mysqli = new mysqli("localhost", "root", "", "cosmicsays");
     if (!($mysqli->query("INSERT INTO video(Link, Title, NumberOfViews, info) ".
 	               "VALUES('$url', '$title', 0, '$info')")));
       echo "Failure: " . $mysqli->error;
