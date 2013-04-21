@@ -17,9 +17,10 @@ if ($_FILES['upload'])
   else if ($_POST['mediaType'] == 'img')
     $uploadDir = "/assets/memes/";
 
-  $uploadFile = $uploadDir . basename($_FILES['upload']['name']);
+  $uploadFilename = basename($_FILES['upload']['name']);
+  $fileURI = $uploadDir . $uploadFilename;
   if (!($_FILES['upload']['error']))
-    move_uploaded_file($_FILES['upload']['tmp_name'], $uploadFile);
+    move_uploaded_file($_FILES['upload']['tmp_name'], $fileURI);
 }
 
 if ($_POST['mediaType'] == 'img')
@@ -27,7 +28,8 @@ if ($_POST['mediaType'] == 'img')
   try
   {
     $mysqli = new mysqli("localhost", "root", "", "cosmicsays");
-    $mysqli->query("CALL PROCEDURE('$title', '$uploadFile', )");
+    $mysqli->query("INSET INTO images(FileName, Title, NumberOfViews, FileLocation, info) ".
+	               "VALUES('$uploadFilename', '$title', 0, '$fileURI', '$info')");
   }
   catch (mysqli_sql_exception $e)
   {
@@ -39,7 +41,8 @@ else if ($_POST['mediaType'] == 'meme')
   try
   {
     $mysqli = connectDB();
-    $mysqli->query("CALL PROCEDURE('$title', '$uploadFilename', '$datetime')");
+    $mysqli->query("INSET INTO images(FileName, Title, NumberOfViews, FileLocation, info) ".
+	               "VALUES('$uploadFilename', '$title', 0, '$fileURI', '$info')");
   }
   catch (mysqli_sql_exception $e)
   {
@@ -52,7 +55,8 @@ else if ($_POST['mediaType'] == 'vid')
   try
   {
     $mysqli = connectDB();
-    $mysqli->query("CALL PROCEDURE('$title', '$url', '$datetime')");
+    $mysqli->query("INSET INTO images(Link, Title, NumberOfViews, info) ".
+	               "VALUES('$url', '$title', 0, '$info')");
   }
   catch (mysqli_sql_exception $e)
   {
