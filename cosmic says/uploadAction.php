@@ -14,12 +14,12 @@ if ($_FILES['upload'])
 {
   if ($_POST['mediaType'] == 'img')
   {
-    $uploadDir = "C:\wamp\www\cosmic_says\assets\images\";
+    $uploadDir = "C:\\wamp\\www\\cosmic_says\\assets\\images\\";
     $dirName = "/assets/images/";
   }
   else if ($_POST['mediaType'] == 'meme')
   {
-    $uploadDir = "C:\wamp\www\cosmic_says\assets\memes\";
+    $uploadDir = "C:\\wamp\\www\\cosmic_says\\assets\\memes\\";
     $dirName = "/assets/memes/";
   }
   
