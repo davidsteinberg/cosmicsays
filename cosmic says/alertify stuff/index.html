@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+	<style>
+	p { color:red; margin:5px; cursor:pointer; }
+	p:hover { background:yellow; }	
+	</style>
+	
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+	<script src="alertify.js"></script>
+	<link rel="stylesheet" href="themes\alertify.bootstrap.css"/>
+	<link rel="stylesheet" href="themes\alertify.core.css"/>
+	<link rel="stylesheet" href="themes\alertify.default.css"/>
+	
+</head>
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+    
+	
+	<p>First Paragraph</p> 
+	<p>Second Paragraph</p>
+	<p>Yet one more Paragraph</p>
+	<div class="demo">
+		<br> <br> <br>   
+		<input id = "btnSubmit" type="submit" value="test direct to facebook"/>
+		<br> <br> <br>  
+	</div>
+    <script>
+    $( document ).ready(function() {
+		
+		$("#btnSubmit").click(function(){
+			// standard notification
+			// setting the wait property to 0 will
+			// keep the log message until it's clicked
+			//alertify.log("Notification", type, wait);
+
+			// success notification
+			// shorthand for alertify.log("Notification", "success");
+			alertify.success("Success notification");
+
+			// error notification
+			// shorthand for alertify.log("Notification", "error");
+			alertify.error("Error notification");
+		});
+		
+		$("p").click(function () {
+			$(this).slideUp();
+		});
+		
+        $( "a" ).click(function( event ) {
+            alert( "The link will no longer take you to jquery.com" );
+			event.preventDefault();
+        });
+    });
+    </script>
+</body>
+</html>

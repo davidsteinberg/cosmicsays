@@ -112,23 +112,23 @@ $(document).ready(function(){
 
 
 <div id="memeForm" class="memeform" style="display:none">
-	<h1>Submit Meme</h1>
-	<form method="post" action="uploadAction.php" enctype="multipart/form-data">
-		<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-		<input type="hidden" name="mediaType" value="meme" />
-		<label> Input Meme Title </label>
-		<input type="text" name="title" placeholder="Meme name required..." />
-		<br>
-		<label> Input Meme Category </label>
-		<input type="text" name="info" placeholder="SPACE FACTS!" />
-		<br>
-		<input id="memeFile" name="upload" type="file"/>
-		<br>
-		<button type="submit" class="btn-info">Submit</button>
-		<br>
-		<br>
-		<button class="btn-large btn-success " href="#" >Create Your Own Meme</button>
-	</form>
+	
+
+		<form method="post" action="makememe.html">
+			<label> Input Meme Title </label>
+				<input type="text" name="title" placeholder="Meme name required..." />
+					<br>
+						<label> Input Meme Category </label>
+						<input type="text" name="title" placeholder="Example, example, example..." />
+							<br>
+				<input id="imageFile" name="upload" type="file"/>
+					<br>
+				<button type="submit" class="btn-info">Submit</button>
+				<br>
+				<br>
+				<button class="btn-large btn-success" href="makememe.html" >Create Your Own Meme</button>
+		</form>
+
 </div>
 
 <div id="vidForm" class="vidform" style="display:none">

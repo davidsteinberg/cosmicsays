@@ -9,18 +9,21 @@
 	    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 	    <link rel="stylesheet" type="text/css" href="index.css">
 	</head>
-	<style>
+	
+	
+		<style>
 body {
 
-	background-image:url("bg/sky.jpg");
+	background-image:url("bg/nasa.jpg");
 	background-size: 1600px 900px;
 	width:100%;
 	height:100%;
 	background-repeat:no-repeat;
 }
 </style>
-
-<body id="index">
+	
+	
+	<body id="index">
 <!--Facebook login JavaScript SDK-->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -47,36 +50,29 @@ body {
 		  </div>
 		</div>
 		
+<!-- div -->
+<div class="span6" align="center" style="position: relative; left: 100px; background-color: #ffffff; opacity: .6; width: 400px; height: 240px">
+<div id="create" class="imageform" style="text-align: center";>
+	<h1>Caption your own</h1>
+		<form method="post" action="makeMeme.php">
+			<label>Top Text</label>
+				<input type="text" name="title" placeholder="Lol text here..." />
+					<br>
+						<label>Bottom Text</label>
+						<input type="text" name="title" placeholder="More LOLing...." />
+							<br>
+							<br>
+				<button type="submit" class="btn-info">Submit</button>
+		</form>
+</div>
+</div>
 
-		<div class="container-fluid">
-  		<div class="row-fluid">
-   			<div class="span9">
-      			<div class="memebox">
-					<h3 class="title"> Memes </h3>
-					<img class="memeimg"  src="http://funny-pictures-blog.com/wp-content/uploads/2011/08/Bitches-Love-Space.jpg">
-				</div>
-   		 	</div>
-   		 	<div class="span1">
-		        <div class="imgbox">
-		        	<h5 class="title"> Images </h5>
-					<img class="boximage" src="supernova_3.png">
-				</div>
-				
-				<div class="span1">
-					<div  class="imgbox">
-						<h5 class="title"> Videos </h5>
-					<iframe width="140px" height="110px" src="http://www.youtube.com/embed/EPyl1LgNtoQ" frameborder="0" allowfullscreen></iframe>
-				</div>
-				
-				<br>
-				<br>
-				<div class="buttonbox" >
-					<a href="forms.html"><button class="btn-success" style="width: 125px; height: 50px; margin-top: 10px">Add your own stuff</button></a>
-					</div>
-				</div>
-	    	</div>
-	  	</div>
-	</div>
+
+
+
+
 
 	</body>
+	
+	
 </html>
