@@ -85,7 +85,6 @@ $(document).ready(function(){
 <!--form-->
 
 
-  <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
   <div class="pagecontainer">
 <div class="banner"></div>
 
@@ -101,61 +100,66 @@ $(document).ready(function(){
   <br>
   <br>
 <div id="imageForm" class="imageform" style="display:none">
-	<h1>Submit Image</h1>
-		<form method="post" action="uploadAction.php">
-			<label> Input Image Name </label>
-				<input type="text" name="title" placeholder="Image name required..." />
-					<br>
-						<label> Input Image Category </label>
-						<input type="text" name="title" placeholder="Example, example, example..." />
-							<br>
-				<input id="imageFile" name="upload"  type="file"/>
-					<br>
-					<br>
-				<button type="submit" class="btn-info">Submit</button>
-		</form>
+  <h1>Submit Image</h1>
+  <form method="post" action="uploadAction.php">
+    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+    <input type="hidden" name="mediaType" value="img" />
+    <label> Input Image Name </label>
+    <input type="text" name="title" placeholder="Image name required..." />
+    <br>
+    <label> Input Image Category </label>
+    <input type="text" name="title" placeholder="Example, example, example..." />
+    <br>
+    <input id="imageFile" name="upload"  type="file"/>
+    <br>
+    <br>
+    <button type="submit" class="btn-info">Submit</button>
+  </form>
 </div>
 
 
 <div id="memeForm" class="memeform" style="display:none">
-	<h1>Submit Meme</h1>
-		<form method="post" action="uploadAction.php">
-			<label> Input Meme Title </label>
-				<input type="text" name="title" placeholder="Meme name required..." />
-					<br>
-						<label> Input Meme Category </label>
-						<input type="text" name="title" placeholder="Example, example, example..." />
-							<br>
-				<input id="imageFile" name="upload" type="file"/>
-					<br>
-				<button type="submit" class="btn-info">Submit</button>
-				<br>
-				<br>
-				<button class="btn-large btn-success " href="#" >Create Your Own Meme</button>
-		</form>
+  <h1>Submit Meme</h1>
+  <form method="post" action="uploadAction.php">
+    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+    <input type="hidden" name="mediaType" value="meme" />
+    <label> Input Meme Title </label>
+    <input type="text" name="title" placeholder="Meme name required..." />
+    <br>
+    <label> Input Meme Category </label>
+    <input type="text" name="title" placeholder="Example, example, example..." />
+    <br>
+    <input id="imageFile" name="upload" type="file"/>
+    <br>
+    <button type="submit" class="btn-info">Submit</button>
+    <br>
+    <br>
+    <button class="btn-large btn-success " href="#" >Create Your Own Meme</button>
+  </form>
 </div>
 
 <div id="vidForm" class="vidform" style="display:none">
-	<h1>Submit Video URL</h1>
-		<form method="post" action="uploadAction.php">
-			<label> Input Video Title </label>
-				<input type="text" name="title" placeholder="Video name required..." />
-					<br>
-					<label> Input Video Category </label>
-						<input type="text" name="title" placeholder="Example, example, example..." />
-							<br>
-								<label> Input Video URL </label>
-							<input type="text" name="title" placeholder="Past URL here..."/>
-						<br>
-					<br>
-				<button type="submit" class="btn-info">Submit</button>
-		</form>
+  <h1>Submit Video URL</h1>
+  <form method="post" action="uploadAction.php">
+    <input type="hidden" name="mediaType" value="img" />
+    <label> Input Video Title </label>
+    <input type="text" name="title" placeholder="Video name required..." />
+    <br>
+    <label> Input Video Category </label>
+    <input type="text" name="title" placeholder="Example, example, example..." />
+    <br>
+    <label> Input Video URL </label>
+    <input type="text" name="title" placeholder="Past URL here..."/>
+    <br>
+    <br>
+    <button type="submit" class="btn-info">Submit</button>
+  </form>
 </div>
 
 </div>
 
-	</body>
+</body>
 	
-	<!--footer-->
+<!--footer-->
 	
 </html>
