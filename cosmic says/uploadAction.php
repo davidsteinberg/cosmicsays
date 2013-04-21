@@ -13,15 +13,23 @@ $info = $_POST['info'];
 if ($_FILES['upload'])
 {
   if ($_POST['mediaType'] == 'img')
-    $uploadDir = "C:\wamp\www\cosmic_says\assets\images";
+  {
+    $uploadDir = "C:\wamp\www\cosmic_says\assets\images\";
+    $dirName = "/assets/images/";
+  }
   else if ($_POST['mediaType'] == 'meme')
-    $uploadDir = "C:\wamp\www\cosmic_says\assets\memes";
-
+  {
+    $uploadDir = "C:\wamp\www\cosmic_says\assets\memes\";
+    $dirName = "/assets/memes/";
+  }
+  
   $uploadFilename = basename($_FILES['upload']['name']);
   $fileURI = $uploadDir . $uploadFilename;
   if (!($_FILES['upload']['error']))
     move_uploaded_file($_FILES['upload']['tmp_name'], $fileURI);
 }
+
+$fileURI = $dirName . $uploadFilename;
 
 if ($_POST['mediaType'] == 'img')
 {
