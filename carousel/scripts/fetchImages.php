@@ -46,12 +46,16 @@ $sth = $dbh->prepare($sql, Array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 		echo '{"FileName":"' . $data[$i]['FileName'] . '", ';
 		echo '"info":"' . $data[$i]['info'] . '"},' . PHP_EOL;
 	}
+	if ($rowCount > 1){
 	echo '{"Title":"' . $data[$rowCount - 1]['Title'] . '", ';
 	echo '{"NumberOfViews":"' . $data[$rowCount - 1]['NumberOfViews'] . '", ';
 	echo '{"FileLocation":"' . $data[$rowCount - 1]['FileLocation'] . '", ';
 	echo '{"FileName":"' . $data[$rowCount - 1]['FileName'] . '", ';
 	echo '"info":"' . $data[$rowCount - 1]['info'] . '"},' . PHP_EOL;
 	echo ']' . PHP_EOL;
+	} else {
+		echo ']' . PHP_EOL;
+	}
 
 	// close connection
 	$dbh = NULL;
