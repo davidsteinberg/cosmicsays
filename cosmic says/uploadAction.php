@@ -34,6 +34,7 @@ if ($_POST['mediaType'] == 'img' || $_POST['mediaType'] == 'meme')
 
 if ($_POST['mediaType'] == 'img')
 {
+  $forward = "images.html";
   try
   {
     $mysqli = new mysqli("localhost", "root", "", "cosmicsays");
@@ -48,6 +49,7 @@ if ($_POST['mediaType'] == 'img')
 }
 else if ($_POST['mediaType'] == 'meme')
 {
+  $forward = "meme.html";
   try
   {
     $mysqli = new mysqli("localhost", "root", "", "cosmicsays");
@@ -62,6 +64,7 @@ else if ($_POST['mediaType'] == 'meme')
 }
 else if ($_POST['mediaType'] == 'vid')
 {
+  $forward = "video.html";
   $url = $_POST['url'];
   try
   {
@@ -75,7 +78,7 @@ else if ($_POST['mediaType'] == 'vid')
     throw $e;
   }
 }
-  
-$mysqli->close();
 
+$mysqli->close();
+header("Location: " . $_SERVER['SERVER_NAME'] . "/cosmic%20says/" . $forward);
 ?>
