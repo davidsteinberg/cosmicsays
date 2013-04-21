@@ -3,15 +3,15 @@
 body{
 	width:100%;
 	height:100%;
-	background-image:url('bluedot.png');
-	background-repeat:no-repeat;
 }
 .container {
 	width:100%;
 }
+/* Landscape phones and down */
+@media (max-width: 480px) { ... }
 .memebox {
    	padding:1em 1em 1em 1em;
-   	border:10px solid #EBE6E6;  
+   	border:2.5px solid black;  
 
 }
 .memeimg {
@@ -21,12 +21,13 @@ body{
 	margin-bottom:auto;
 	width:100%;
 	height:80%;
-	
 }
 .imgbox{
 	height:30%;
-	background-color:#EBE6E6;
     text-align:center;
+    border:2.5px solid black;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
 }
 
 .title{
@@ -35,14 +36,26 @@ body{
 	text-align: center;
 }
 #longbar{
-padding-top: 5px;
--moz-box-shadow: 3px 4px 8px #000;
--webkit-box-shadow: 3px 4px 8px #000;
-box-shadow: 3px 4px 8px #000;
+	text-align: center;
+	border-radius: 5px;
+	z-index: 1;
+	position: fixed;
+	margin-top: 100px;
+	margin-left: -160px;
+	width: 150px;
+	height: 150px;
+	padding: 5px;
+	opacity:0.9;
+	background: grey;
 }
 
 #Arrow{
--moz-box-shadow: 3px 4px 8px #000;
--webkit-box-shadow: 3px 4px 8px #000;
-box-shadow: 3px 4px 8px #000;
+	height: 25px; 
+	width: 25px;
+	z-index: 1;
+	position: fixed;
+	margin-top: 120px;
+}
+#fb-comments {
+	display: block;
 }
