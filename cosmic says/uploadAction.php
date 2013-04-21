@@ -14,12 +14,12 @@ if ($_POST['mediaType'] == 'img' || $_POST['mediaType'] == 'meme')
   if ($_POST['mediaType'] == 'img')
   {
     $uploadDir = "C:\wamp\www\cosmic_says\assets\images\\";
-    $dirName .= "/assets/images/";
+    $dirName = "/assets/images/";
   }
   else if ($_POST['mediaType'] == 'meme')
   {
     $uploadDir = "C:\wamp\www\cosmic_says\assets\memes\\";
-    $dirName .= "/assets/memes/";
+    $dirName = "/assets/memes/";
   }
   
   $uploadFilename = basename($_FILES['upload']['name']);
@@ -70,7 +70,7 @@ else if ($_POST['mediaType'] == 'vid')
   {
     $mysqli = new mysqli("localhost", "root", "", "cosmicsays");
     if (!($mysqli->query("INSERT INTO video(Link, Title, NumberOfViews, info) ".
-	               "VALUES('$url', '$title', 0, '$info')")));
+	               "VALUES('$url', '$title', 0, '$info')")))
       echo "Failure: " . $mysqli->error;
   }
   catch (mysqli_sql_exception $e)

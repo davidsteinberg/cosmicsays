@@ -7,7 +7,7 @@
 	overflow: hidden;
 
 	height: 100px;
-	width: 330px;
+	width: 730px;
 	display: inline-block;
 	top: 10px;
 }
@@ -23,17 +23,17 @@
 .jcarousel li {
 	padding-left: 10px;
 	float: left;
-	height: 100px;
+	height: 200px;
 }
 
 .jcarousel img {
-	height: 100px;
+	height: 200px;
 }
 
 
 #outerContainer {
 	width: 80%;
-	min-width: 450px;
+	min-width: 750px;
 	margin: 0 auto;
 }
 
@@ -41,14 +41,13 @@
 #carouselWarp {
 	position: relative;
 	height: 120px;
-	max-width: 440px;/*425*/
+	max-width: 740px;/*425*/
 	padding-left: 10px;
 	margin-left: auto;
 	margin-right: auto;
 
 	/*background: none repeat scroll 0% 0% rgb(240, 246, 249);*/
 	/*border: 1px solid rgb(52, 111, 151);*/
-	border: 1px solid rgb(100, 100, 100);
 	border-radius: 10px;
 }
 
@@ -57,14 +56,14 @@
 	float: left;
 
 	position: relative;
-	top: 35px;/*50*/
+	top: 70px;/*50, 35*/
 }
 .next {
 	display: inline-block;
-	float: right; left: 390px;
+	float: right; left: 790px;
 	padding-left: 10px;
 
 	position: absolute;
-	top: 35px;
+	top: 70px;
 }
 
