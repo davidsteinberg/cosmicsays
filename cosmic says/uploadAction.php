@@ -9,8 +9,7 @@
 $title = $_POST['title'];
 $info = $_POST['info'];
 
-if (!($_FILES['upload']))
-else
+if ($_POST['mediaType'] == 'img' || $_POST['mediaType'] == 'meme')
 {
   if ($_POST['mediaType'] == 'img')
   {
