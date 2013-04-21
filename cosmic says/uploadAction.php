@@ -9,27 +9,29 @@
 $title = $_POST['title'];
 $info = $_POST['info'];
 
-
-if ($_FILES['upload'])
+if (!($_FILES['upload']))
+else
 {
   if ($_POST['mediaType'] == 'img')
   {
     $uploadDir = "C:\wamp\www\cosmic_says\assets\images\\";
-    $dirName = "/assets/images/";
+    $dirName .= "/assets/images/";
   }
   else if ($_POST['mediaType'] == 'meme')
   {
     $uploadDir = "C:\wamp\www\cosmic_says\assets\memes\\";
-    $dirName = "/assets/memes/";
+    $dirName .= "/assets/memes/";
   }
   
   $uploadFilename = basename($_FILES['upload']['name']);
   $fileURI = $uploadDir . $uploadFilename;
   if (!($_FILES['upload']['error']))
     move_uploaded_file($_FILES['upload']['tmp_name'], $fileURI);
+	
+  //reusing this variable to store the unix path in the db
+  $fileURI = $dirName . $uploadFilename;
 }
 
-$fileURI = $dirName . $uploadFilename;
 
 if ($_POST['mediaType'] == 'img')
 {
