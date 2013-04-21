@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2013 at 03:44 AM
+-- Generation Time: Apr 21, 2013 at 04:27 AM
 -- Server version: 5.1.36
 -- PHP Version: 5.3.0
 
@@ -66,6 +66,7 @@ CREATE TABLE `image` (
   `Title` varchar(20) DEFAULT NULL,
   `NumberOfViews` int(50) NOT NULL,
   `UploadDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `FileLocation` varchar(75) NOT NULL,
   PRIMARY KEY (`imgID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -97,6 +98,7 @@ CREATE TABLE `meme` (
   `Text` varchar(50) NOT NULL,
   `NumberOfViews` int(11) NOT NULL,
   `UploadDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `FileLocation` varchar(75) NOT NULL,
   PRIMARY KEY (`memeID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
