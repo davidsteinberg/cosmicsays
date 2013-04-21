@@ -1,9 +1,13 @@
 *{margin:0em; padding:0em;}
 
 body{
+	background-image:url('bg/sky.jpg');
+	background-size: 100% 100%;
 	width:100%;
 	height:100%;
+	background-repeat:no-repeat;
 }
+
 .container {
 	width:100%;
 }
@@ -58,4 +62,11 @@ body{
 }
 #fb-comments {
 	display: block;
+}
+.fb-like{
+position: absolute;
+z-index: 4;
+top: 100px;
+left: 100px;
+
 }
