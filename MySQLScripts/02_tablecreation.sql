@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2013 at 12:52 AM
+-- Generation Time: Apr 21, 2013 at 03:44 AM
 -- Server version: 5.1.36
 -- PHP Version: 5.3.0
 
@@ -24,7 +24,7 @@ CREATE TABLE `category` (
   `catID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(20) NOT NULL,
   PRIMARY KEY (`catID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -51,7 +51,7 @@ CREATE TABLE `fact` (
   `factID` int(11) NOT NULL AUTO_INCREMENT,
   `Fact` varchar(50) NOT NULL,
   PRIMARY KEY (`factID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -65,9 +65,9 @@ CREATE TABLE `image` (
   `FileName` varchar(50) NOT NULL,
   `Title` varchar(20) DEFAULT NULL,
   `NumberOfViews` int(50) NOT NULL,
-  `UploadDate` datetime NOT NULL,
+  `UploadDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`imgID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -96,9 +96,9 @@ CREATE TABLE `meme` (
   `FileName` varchar(20) NOT NULL,
   `Text` varchar(50) NOT NULL,
   `NumberOfViews` int(11) NOT NULL,
-  `UploadDate` datetime NOT NULL,
+  `UploadDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`memeID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -125,10 +125,10 @@ CREATE TABLE `video` (
   `vidID` int(11) NOT NULL AUTO_INCREMENT,
   `Link` varchar(50) NOT NULL,
   `NumberOfViews` int(11) NOT NULL,
-  `UploadDate` datetime NOT NULL,
+  `UploadDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Title` varchar(20) NOT NULL,
   PRIMARY KEY (`vidID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
