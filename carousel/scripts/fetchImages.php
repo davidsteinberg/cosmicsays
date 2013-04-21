@@ -38,19 +38,19 @@ $sth = $dbh->prepare($sql, Array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 //var_dump($data);
 	// output results as JSON
 	$rowCount = count($data);
-	echo "[" . PHP_EOL;
+	echo '[' . PHP_EOL;
 	for ($i = 0; $i < $rowCount - 1; $i++){
-		echo '{"Title":"' . $data[$i]['Title'] . '", ',
-			'{"NumberOfViews":"' . $data[$i]['NumberOfViews'] . '", ',
-			'{"FileLocation":"' . $data[$i]['FileLocation'] . '", ',
-			'{"FileName":"' . $data[$i]['FileName'] . '", ',
-			'"info":"' . $data[$i]['info'] . '"},' . PHP_EOL;
+		echo '{"Title":"' . $data[$i]['Title'] . '", ';
+		echo '{"NumberOfViews":"' . $data[$i]['NumberOfViews'] . '", ';
+		echo '{"FileLocation":"' . $data[$i]['FileLocation'] . '", ';
+		echo '{"FileName":"' . $data[$i]['FileName'] . '", ';
+		echo '"info":"' . $data[$i]['info'] . '"},' . PHP_EOL;
 	}
-	echo '{"Title":"' . $data[$rowCount]['Title'] . '", ',
-		'{"NumberOfViews":"' . $data[$rowCount]['NumberOfViews'] . '", ',
-		'{"FileLocation":"' . $data[$rowCount]['FileLocation'] . '", ',
-		'{"FileName":"' . $data[$rowCount]['FileName'] . '", ',
-		'"info":"' . $data[$rowCount]['info'] . '"},' . PHP_EOL;
+	echo '{"Title":"' . $data[$rowCount]['Title'] . '", ';
+	echo '{"NumberOfViews":"' . $data[$rowCount]['NumberOfViews'] . '", ';
+	echo '{"FileLocation":"' . $data[$rowCount]['FileLocation'] . '", ';
+	echo '{"FileName":"' . $data[$rowCount]['FileName'] . '", ';
+	echo '"info":"' . $data[$rowCount]['info'] . '"},' . PHP_EOL;
 	echo ']' . PHP_EOL;
 
 	// close connection
