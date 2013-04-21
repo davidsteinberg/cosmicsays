@@ -46,11 +46,11 @@ $sth = $dbh->prepare($sql, Array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 			'{"FileName":"' . $data[$i]['FileName'] . '", ',
 			'"info":"' . $data[$i]['info'] . '"},' . PHP_EOL;
 	}
-	echo '{"Title":"' . $data[$i]['Title'] . '", ',
-		'{"NumberOfViews":"' . $data[$i]['NumberOfViews'] . '", ',
-		'{"FileLocation":"' . $data[$i]['FileLocation'] . '", ',
-		'{"FileName":"' . $data[$i]['FileName'] . '", ',
-		'"info":"' . $data[$i]['info'] . '"},' . PHP_EOL;
+	echo '{"Title":"' . $data[$rowCount]['Title'] . '", ',
+		'{"NumberOfViews":"' . $data[$rowCount]['NumberOfViews'] . '", ',
+		'{"FileLocation":"' . $data[$rowCount]['FileLocation'] . '", ',
+		'{"FileName":"' . $data[$rowCount]['FileName'] . '", ',
+		'"info":"' . $data[$rowCount]['info'] . '"},' . PHP_EOL;
 	echo ']' . PHP_EOL;
 
 	// close connection
